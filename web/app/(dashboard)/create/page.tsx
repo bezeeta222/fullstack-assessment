@@ -13,15 +13,15 @@ function CreateProduct() {
     console.log('Component has been mounted');
   }, []);
 
+  const API_BASE_URL = process.env.API_BASE_URL;
+
   const createProduct = async (form: any) => {
     try {
       console.log('Attempting to create product with data:', form);
       axios.defaults.headers.post['Content-Type'] =
         'application/x-www-form-urlencoded';
-      const { data } = await axios.post(
-        'http://localhost:8000/api/products',
-        form
-      );
+      const { data } = await axios.post(`${API_BASE_URL}/api/products`, form);
+
       console.log('Product creation successful:', data);
       setSuccess(true);
       setValidationErrors([]);

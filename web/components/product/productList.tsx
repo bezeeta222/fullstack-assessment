@@ -34,6 +34,8 @@ function ProductList() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const API_BASE_URL = process.env.API_BASE_URL;
+
   useEffect(() => {
     fetchProducts();
   }, [sortOrder, sortField]);
@@ -47,7 +49,7 @@ function ProductList() {
 
     try {
       const res = await fetch(
-        `http://localhost:8000/api/products?sort=${sortOrder + sortField}&${filterString}`
+        `${API_BASE_URL}/api/products?sort=${sortOrder + sortField}&${filterString}`
       );
       if (!res.ok) {
         throw new Error('Network response was not ok');

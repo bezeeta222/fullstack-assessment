@@ -12,10 +12,12 @@ const app: Express = express();
 
 const port = process.env.PORT || 8000;
 
+const corsOrigin = process.env.CORS_ORIGIN || "http://localhost:3000";
+
 // Enable CORS
 app.use(
   cors({
-    origin: "http://localhost:3000", // Change this to your frontend's URL if needed
+    origin: corsOrigin,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })

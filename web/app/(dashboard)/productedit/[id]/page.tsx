@@ -29,13 +29,15 @@ const EditProduct = () => {
     image: ''
   });
 
+  const API_BASE_URL = process.env.API_BASE_URL;
+
   useEffect(() => {
     if (id) fetchProduct();
   }, [id]);
 
   const fetchProduct = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/products/${id}`);
+      const res = await fetch(`${API_BASE_URL}/api/products/${id}`);
       const data: Product = await res.json();
       setProduct(data);
       setForm(data);
@@ -50,15 +52,11 @@ const EditProduct = () => {
 
   const updateProduct = async () => {
     try {
-      const res = await axios.put(
-        `http://localhost:8000/api/products/${id}`,
-        form,
-        {
-          headers: {
-            'Content-Type': 'application/json'
-          }
+      const res = await axios.put(`${API_BASE_URL}/api/products/${id}`, form, {
+        headers: {
+          'Content-Type': 'application/json'
         }
-      );
+      });
       console.log('Update response:', res); // Debugging log
       setSuccess(true);
       setValidationErrors([]);
