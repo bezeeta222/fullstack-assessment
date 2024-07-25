@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "api", // Name of the application
+      name: "web", // Name of the application
       script: "pnpm", // The script to execute
       args: "run start", // Arguments for the script
       interpreter: "none", // Use the system's default interpreter

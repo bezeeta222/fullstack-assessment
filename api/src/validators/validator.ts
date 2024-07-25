@@ -53,7 +53,7 @@ export const validate = (req: Request, res: Response, next: NextFunction) => {
         return next();
     }
     const extractedErrors: any = [];
-    errors.array().map((err) => extractedErrors.push({ [err.path]: err.msg }));
+    errors.array().map((err) => extractedErrors.push({ [err.type]: err.msg }));
 
     return res.status(422).json({
         errors: extractedErrors,
