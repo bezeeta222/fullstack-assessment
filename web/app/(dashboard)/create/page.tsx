@@ -13,7 +13,7 @@ function CreateProduct() {
     console.log('Component has been mounted');
   }, []);
 
-  const API_BASE_URL = process.env.API_BASE_URL;
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   const createProduct = async (form: any) => {
     try {
