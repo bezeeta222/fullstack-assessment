@@ -1,5 +1,8 @@
 # Fullstack Assessment
 
+live link
+http://3.80.19.234:3001/
+
 In this assessment, you will be required to demonstrate your understanding on:
 
 1. Developing CRUD features with REST APIs. 
