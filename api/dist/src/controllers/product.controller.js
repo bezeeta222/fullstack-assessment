@@ -61,7 +61,7 @@ exports.findAll = findAll;
  * @param res
  * @returns
  */
-const find = ({ params }, res) => __awaiter(void 0, void 0, void 0, function* () {
+const find = (_a, res_1) => __awaiter(void 0, [_a, res_1], void 0, function* ({ params }, res) {
     const { id } = params;
     try {
         const product = yield Product_1.default.findOne({ where: { id } });
@@ -72,7 +72,7 @@ const find = ({ params }, res) => __awaiter(void 0, void 0, void 0, function* ()
     }
 });
 exports.find = find;
-const create = ({ body }, res) => __awaiter(void 0, void 0, void 0, function* () {
+const create = (_a, res_1) => __awaiter(void 0, [_a, res_1], void 0, function* ({ body }, res) {
     try {
         const product = yield Product_1.default.create(body);
         return res.send(product);
@@ -88,7 +88,7 @@ exports.create = create;
  * @param res
  * @returns
  */
-const update = ({ body, params }, res) => __awaiter(void 0, void 0, void 0, function* () {
+const update = (_a, res_1) => __awaiter(void 0, [_a, res_1], void 0, function* ({ body, params }, res) {
     const { id } = params;
     try {
         yield Product_1.default.update(body, { where: { id } });

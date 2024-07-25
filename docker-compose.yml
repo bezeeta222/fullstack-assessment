@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./api
+    container_name: api-container
+    ports:
+      - "8000:8000" # Map the container's port 8000 to the host's port 8000
+    environment:
+      NODE_ENV: production
+
+  web:
+    build: ./web
+    container_name: web-container
+    ports:
+      - "3001:3001" # Map the container's port 3001 to the host's port 3001
+    environment:
+      NODE_ENV: production
